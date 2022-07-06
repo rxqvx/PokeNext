@@ -21,7 +21,7 @@ export const SearchBarContextProvider: React.FC = ({ children }) => {
     };
 
     const handleSearch = () => {
-        console.log(pokemon)
+        // console.log(pokemon)
         setBusca(pokemon);
         setPokemon('');
     };
