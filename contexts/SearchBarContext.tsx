@@ -1,4 +1,5 @@
 
+import { stringify } from "querystring";
 import React from "react";
 import { createContext } from "react"
 export const SearchBarContext = createContext({
@@ -16,8 +17,9 @@ export const SearchBarContextProvider: React.FC = ({ children }) => {
 
     const handleChange = (e: any) => {
         const value = e.target.value;
-        setPokemon(value)
-        setBusca(value);
+        const teste = String(value);
+        setPokemon(teste)
+        setBusca(teste);
     };
 
     const onSearchHandler = (busca) => {

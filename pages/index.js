@@ -8,7 +8,7 @@ import { SearchBarContext } from '../contexts/SearchBarContext'
 
 export async function getStaticProps() {
 
-  const maxPokemons = 200
+  const maxPokemons = 250
   const api = 'https://pokeapi.co/api/v2/pokemon/'
 
   const res = await fetch(`${api}/?limit=${maxPokemons}`)
