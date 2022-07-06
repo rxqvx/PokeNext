@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background: transparent !important;
 }
 
 .logo h1 {
@@ -44,4 +44,12 @@
 
 .input {
     color: #000;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+.button_search {
+    background-color: #d33e33;
+    padding: 0.5em;
+    border-radius: 1em;
 }
