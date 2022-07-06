@@ -7,7 +7,6 @@ export const SearchBarContext = createContext({
     handleChange: Function,
     pokemon: String,
     setPokemon: Function,
-    onSearchHandler: Function,
     busca: String,
 });
 
@@ -21,24 +20,14 @@ export const SearchBarContextProvider: React.FC = ({ children }) => {
         setBusca(teste);
     };
 
-    const onSearchHandler = (busca) => {
-        if (!busca) {
-            return false
-        }
-        return true
-    }
-
-
-
     const handleSearch = () => {
         console.log(pokemon)
-        // onSearchHandler(pokemon);
         setBusca(pokemon);
         setPokemon('');
     };
 
     return (
-        <SearchBarContext.Provider value={{ pokemon, setPokemon: setPokemon, handleChange: handleChange, handleSearch: handleSearch, onSearchHandler: onSearchHandler, busca }}>
+        <SearchBarContext.Provider value={{ pokemon, setPokemon: setPokemon, handleChange: handleChange, handleSearch: handleSearch, busca }}>
             {children}
         </SearchBarContext.Provider>
     )
