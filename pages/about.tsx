@@ -9,7 +9,7 @@ const About = () => {
             <p>
                 Projeto de uma Pokedex realizado com framework Next.js, utilizando a api do pokemon(PokeAPI), que foi seguido pelo curso do Matheus Battisti.
             </p>
-            <Image src="/images/charizard.png" width="300" height="300" alt="Charizard" />
+            <Image src="/images/gengar.png" width="300" height="300" alt="Charizard" />
         </div>
     );
 }

@@ -1,10 +1,14 @@
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import Card from '../components/Card'
+import { useContext } from 'react'
+import { SearchBarContext } from '../contexts/SearchBarContext'
+
+
 
 export async function getStaticProps() {
 
-  const maxPokemons = 365
+  const maxPokemons = 200
   const api = 'https://pokeapi.co/api/v2/pokemon/'
 
   const res = await fetch(`${api}/?limit=${maxPokemons}`)
@@ -14,15 +18,43 @@ export async function getStaticProps() {
     item.id = index + 1
   })
 
+  const resultados = data.results
+
   return {
     props: {
-      pokemons: data.results,
+      pokemons: resultados,
     },
   }
 }
 
-
 export default function Home({ pokemons }) {
+  const { busca } = useContext(SearchBarContext)
+
+  const handleList = (busca) => {
+    if (!busca | busca === '') {
+      return (
+        <>
+          {pokemons.map((pokemon) => (//jsx é considerado um objeto, por isso usamos parentesis ao invés de chaves como de costume
+            <Card key={pokemon.id} pokemon={pokemon} />
+          ))}
+        </>
+      );
+    } else if (busca) {
+      // { pokemons.map((pokemon) => console.log(pokemon.name)) }
+      const pokemonsFiltered = pokemons.filter((pokemon) => (pokemon.name).startsWith(busca))
+      return (
+        <>
+          {pokemonsFiltered.map((pokemon) => (//jsx é considerado um objeto, por isso usamos parentesis ao invés de chaves como de costume
+            <Card key={pokemon.id} pokemon={pokemon} />
+          ))}
+        </>
+      );
+    }
+
+  }
+
+
+
   return (<>
     <div>
       <div className={styles.title_container}>
@@ -30,9 +62,7 @@ export default function Home({ pokemons }) {
         <Image src="/images/pokeball.png" width="50" height="50" alt="PokeNextBall" />
       </div>
       <div className={styles.pokemon_container}>
-        {pokemons.map((pokemon) => (//jsx é considerado um objeto, por isso usamos parentesis ao invés de chaves como de costume
-          <Card key={pokemon.id} pokemon={pokemon} />
-        ))}
+        {handleList(busca)}
       </div>
     </div>
   </>)
