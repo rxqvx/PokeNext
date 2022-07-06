@@ -15,8 +15,7 @@ export const SearchBarContextProvider: React.FC = ({ children }) => {
     const [pokemon, setPokemon] = React.useState<string>('');
     const [busca, setBusca] = React.useState<string>(null);
 
-    const handleChange = (e: any) => {
-        const value = e.target.value;
+    const handleChange = (value: any) => {
         const teste = String(value);
         setPokemon(teste)
         setBusca(teste);
