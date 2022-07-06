@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from '../styles/Navbar.module.css'
-import { Button, Flex, Text } from '@chakra-ui/react'
+import { Button, Flex, Text, Input } from '@chakra-ui/react'
 // import { Input } from 'antd'
 import { SearchBarContext } from '../contexts/SearchBarContext'
 import { useContext } from "react";
@@ -9,10 +9,10 @@ import { useContext } from "react";
 
 const Navbar = () => {
 
-  const { handleChange, handleSearch, pokemon } = useContext(SearchBarContext);
+  const { handleChange, handleSearch } = useContext(SearchBarContext);
 
   return (
-    <nav className={styles.navbar}>
+    <div className={styles.navbar}>
       <Link href='/'>
         <a>
           <div className={styles.logo}>
@@ -28,11 +28,11 @@ const Navbar = () => {
       </Link>
       <Flex gap={4}>
         <Text fontSize='lg' alignSelf="center" fontFamily='sans-serif'>Pesquise pelo Pokemon:</Text>
-        {/* erro no build no input do chakraui<Input value={pokemon} focusBorderColor="#E33D33" onChange={(e: any) => handleChange(e.target.value)} size='md' width="auto" color="tomato" placeholder="ex.:Pikachu" _placeholder={{ opacity: 0.4, color: 'inherit' }} /> */}
-        {/* erro no build no input do antd <Input placeholder="pikachu" onChange={(e: any) => handleChange(e.target.value)} value={pokemon} onPressEnter={handleSearch} /> */}
-        <input onChange={(e: any) => handleChange(e.target.value)} placeholder="pikachu" className={styles.input} value={pokemon} />
-        {/* <Button onClick={handleSearch} colorScheme='red' variant='outline'>Buscar</Button> */}
-        <button onClick={handleSearch} className={styles.button_search}>Buscar</button>
+        <Input focusBorderColor="#E33D33" onChange={(e) => handleChange(e.target.value)} size='md' width="auto" color="tomato" placeholder="ex.:Pikachu" _placeholder={{ opacity: 0.4, color: 'inherit' }} />
+        {/* <Input placeholder="pikachu" onChange={(e: any) => handleChange(e.target.value)} value={pokemon} onPressEnter={handleSearch} /> */}
+        {/* <input onChange={(e: any) => handleChange(e.target.value)} placeholder="pikachu" className={styles.input} value={pokemon} /> */}
+        <Button onClick={(handleSearch)} colorScheme='red' variant='outline'>Buscar</Button>
+        {/* <button onClick={handleSearch} className={styles.button_search}>Buscar</button> */}
       </Flex>
       <ul className={styles.link_items}>
         <li>
@@ -46,7 +46,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-    </nav>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 
 import { stringify } from "querystring";
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { createContext } from "react"
 export const SearchBarContext = createContext({
     handleSearch: Function,
@@ -10,12 +10,13 @@ export const SearchBarContext = createContext({
     busca: String,
 });
 
-export const SearchBarContextProvider: React.FC = ({ children }) => {
-    const [pokemon, setPokemon] = React.useState<string>('');
-    const [busca, setBusca] = React.useState<string>(null);
+export const SearchBarContextProvider = ({ children }) => {
+    const [pokemon, setPokemon] = React.useState(null);
+    const [busca, setBusca] = React.useState(null);
 
-    const handleChange = (value: StringConstructor) => {
-        const teste = String(value);
+    const handleChange = (value) => {
+        console.log("tipo do pokemon: ", typeof (pokemon));
+        const teste = value;
         setPokemon(teste)
         setBusca(teste);
     };

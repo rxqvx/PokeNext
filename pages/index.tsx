@@ -4,8 +4,6 @@ import Card from '../components/Card'
 import { useContext } from 'react'
 import { SearchBarContext } from '../contexts/SearchBarContext'
 
-
-
 export async function getStaticProps() {
 
   const maxPokemons = 250
@@ -31,7 +29,7 @@ export default function Home({ pokemons }) {
   const { busca } = useContext(SearchBarContext)
 
   const handleList = (busca) => {
-    if (!busca | busca === '') {
+    if (!busca || busca === '') {
       return (
         <>
           {pokemons.map((pokemon) => (//jsx é considerado um objeto, por isso usamos parentesis ao invés de chaves como de costume
