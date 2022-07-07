@@ -54,14 +54,17 @@ export default function Home({ pokemons }) {
 
 
   return (<>
-    <div>
-      <div className={styles.title_container}>
-        <h1>Poke<span>Next</span></h1>
-        <Image src="/images/pokeball.png" width="50" height="50" alt="PokeNextBall" />
+    <section id="home">
+      <div>
+        <div className={styles.title_container}>
+          <h1>Poke<span>Next</span></h1>
+          <Image src="/images/pokeball.png" width="50" height="50" alt="PokeNextBall" />
+        </div>
+        <div className={styles.pokemon_container}>
+          {handleList(busca)}
+        </div>
       </div>
-      <div className={styles.pokemon_container}>
-        {handleList(busca)}
-      </div>
-    </div>
+    </section>
+
   </>)
 }
