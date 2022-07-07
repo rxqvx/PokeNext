@@ -13,10 +13,15 @@
     justify-content: center;
     align-items: center;
     background: transparent !important;
+    transition: all .2s ease-in-out;
 }
 
 .logo h1 {
     margin-left: .5em;
+}
+
+.logo:hover {
+    transform: scale(1.1);
 
 }
 
