@@ -30,6 +30,7 @@ export default function Home({ pokemons }) {
 
   const handleList = (busca) => {
     if (!busca || busca === '') {
+      console.log("busca false", busca)
       return (
         <>
           {pokemons.map((pokemon) => (// como jsx considera como um objeto então tem que ser parentesis ao invés de chaves como normalmente
@@ -38,13 +39,14 @@ export default function Home({ pokemons }) {
         </>
       );
     } else if (busca) {
+      console.log("busca true", busca)
       // { pokemons.map((pokemon) => console.log(pokemon.name)) }
       const pokemonsFiltered = pokemons.filter((pokemon) => (pokemon.name).startsWith(busca))
       return (
         <>
-          {pokemonsFiltered.map((pokemon) => {
+          {pokemonsFiltered.map((pokemon) => (// como jsx considera como um objeto então tem que ser parentesis ao invés de chaves como normalmente
             <Card key={pokemon.id} pokemon={pokemon} />
-          })}
+          ))}
         </>
       );
     }
