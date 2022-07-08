@@ -1,8 +1,8 @@
 import styles from '../styles/Home.module.css'
-import Image from 'next/image'
 import Card from '../components/Card'
 import { useContext } from 'react'
 import { SearchBarContext } from '../contexts/SearchBarContext'
+import { Image, Flex, Text } from '@chakra-ui/react'
 
 export async function getStaticProps() {
 
@@ -32,7 +32,7 @@ export default function Home({ pokemons }) {
     if (!busca || busca === '') {
       return (
         <>
-          {pokemons.map((pokemon) => (//jsx é considerado um objeto, por isso usamos parentesis ao invés de chaves como de costume
+          {pokemons.map((pokemon) => (// como jsx considera como um objeto então tem que ser parentesis ao invés de chaves como normalmente
             <Card key={pokemon.id} pokemon={pokemon} />
           ))}
         </>
@@ -42,9 +42,9 @@ export default function Home({ pokemons }) {
       const pokemonsFiltered = pokemons.filter((pokemon) => (pokemon.name).startsWith(busca))
       return (
         <>
-          {pokemonsFiltered.map((pokemon) => (//jsx é considerado um objeto, por isso usamos parentesis ao invés de chaves como de costume
+          {pokemonsFiltered.map((pokemon) => {
             <Card key={pokemon.id} pokemon={pokemon} />
-          ))}
+          })}
         </>
       );
     }
@@ -54,16 +54,49 @@ export default function Home({ pokemons }) {
 
 
   return (<>
-    <section id="home">
-      <div>
-        <div className={styles.title_container}>
-          <h1>Poke<span>Next</span></h1>
-          <Image src="/images/pokeball.png" width="50" height="50" alt="PokeNextBall" />
-        </div>
-        <div className={styles.pokemon_container}>
-          {handleList(busca)}
-        </div>
-      </div>
+    <section id="home" >
+      <Flex
+        justifyContent='center'
+        alignItems='center'
+        marginBottom='2em'
+      >
+        {/* title_container */}
+        <Text
+          as="h1"
+          color='#e33d33'
+          textAlign='center'
+          fontSize='3em'
+          paddingLeft='5px'
+          marginRight='.4em'
+          backgroundColor='#e9e9e9'
+          borderRadius='0.5rem'
+          display={['none', 'none', 'initial', 'initial']}
+        >Poke
+          <Text
+            as="span"
+            color='#f4f4f4'
+            backgroundColor='#e33d33'
+            border='solid 1px #e9e9e9'
+            borderRadius='0.5rem'
+            padding='8px'
+            margin='5px'
+          >
+            Next
+          </Text>
+        </Text>
+        <Image src="/images/pokeball.png" width="50" height="50" alt="PokeNextBall" display={['none', 'none', 'initial', 'initial']} />
+      </Flex>
+      <Flex
+        flexWrap='wrap'
+        justifyContent='space-between'
+        alignItems='center'
+        maxWidth={['1100px', '1100px']}
+        margin={['1', '0 auto']}
+        gap={['initial', 4]}
+      >
+        {/* pokemonContainer */}
+        {handleList(busca)}
+      </Flex>
     </section>
 
   </>)
