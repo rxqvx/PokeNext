@@ -92,8 +92,8 @@ export default function Home({ pokemons }) {
         flexWrap='wrap'
         justifyContent='space-between'
         alignItems='center'
-        maxWidth={['1100px', '1100px']}
-        margin={['1', '0 auto']}
+        maxWidth={['400px', '1100px']}
+        margin='0 auto'
         gap={['initial', 4]}
       >
         {/* pokemonContainer */}

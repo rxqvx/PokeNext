@@ -8,3 +8,9 @@
 .main-container {
     min-height: 70vh;
 }
+
+@media (max-width: 600px) {
+    * .main-container {
+        width: 200vw;
+    }
+}
