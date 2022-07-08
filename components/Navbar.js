@@ -96,7 +96,6 @@ const Navbar = () => {
       }
       <List
         display={['none', 'none', 'flex', 'flex']}
-        listStyle="none"
       >{/*{styles.link_items}*/}
         <ListItem onClick={Clear} marginRight="1.3em">
           <Text

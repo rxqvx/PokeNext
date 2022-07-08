@@ -8,13 +8,13 @@ const Card = ({ pokemon }) => {
             flexDirection='column'
             padding='2em 1em'
             marginBottom='2em'
-            width={['80%', '23%']}
+            width={['40%', '23%']}
             borderRadius='1em'
             border='2px solid #E33D33'
             boxShadow='5px 5px 12px rgba(0, 0, 0, 0.5)'
             color='#fff'
             backgroundColor='#333'
-        // margin={5}
+            margin={[2, 'initial']}
         >
             <Image
                 src={`https://cdn.traction.one/pokedex/pokemon/${pokemon.id}.png`}
@@ -49,6 +49,10 @@ const Card = ({ pokemon }) => {
                 borderRadius='5px'
                 fontWeight='bold'
                 transition='0.4s'
+                _hover={{
+                    backgroundColor: "#e33d33",
+                    color: '#fff'
+                }}
             >
                 Detalhes
             </Text>
