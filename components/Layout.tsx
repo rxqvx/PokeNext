@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
         <title>PokeNext</title>
       </Head>
       <Navbar />
-      <main className="main-container">{children}</main>
+      <main className="main-container" >{children}</main>
       <Footer />
     </>
   );
