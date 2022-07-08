@@ -85,10 +85,27 @@ const Navbar = () => {
         >
           <Flex mt={10} justifyContent="start" gridGap="4" flexDirection="column">
             <Divider orientation="horizontal" />
-            <Text color="#000">olamundokk</Text>
-            <Text color="#000">olamundokk</Text>
-            <Text color="#000">olamundokk</Text>
-            <Text color="#000">olamundokk</Text>
+            <Text
+              as="a"
+              href="/"
+              color="#333"
+              textDecoration='none'
+              padding="5px"
+              transition=".4s"
+              borderBottom="2px solid transparent"
+              _hover={{ borderColor: "#e33d33" }}
+            >Home
+            </Text>
+            <Text
+              as="a"
+              color="#333"
+              textDecoration='none'
+              padding="5px"
+              transition=".4s"
+              borderBottom="2px solid transparent"
+              href="/about"
+              _hover={{ borderColor: "#e33d33" }}
+            >About</Text>
           </Flex>
         </Flex>
         :

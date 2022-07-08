@@ -1,6 +1,6 @@
 .pokemon_container {
     text-align: center;
-
+    height: fit-content;
 }
 
 .title {

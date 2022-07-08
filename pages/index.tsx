@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.css'
 import Card from '../components/Card'
 import { useContext } from 'react'
 import { SearchBarContext } from '../contexts/SearchBarContext'
@@ -6,7 +5,7 @@ import { Image, Flex, Text } from '@chakra-ui/react'
 
 export async function getStaticProps() {
 
-  const maxPokemons = 250
+  const maxPokemons = 252
   const api = 'https://pokeapi.co/api/v2/pokemon/'
 
   const res = await fetch(`${api}/?limit=${maxPokemons}`)
