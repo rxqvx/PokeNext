@@ -1,8 +1,7 @@
 import Link from "next/link";
-import React from 'react'
 import { Image, Button, Flex, Text, Input, List, ListItem, IconButton, Divider } from '@chakra-ui/react'
 import { SearchBarContext } from '../contexts/SearchBarContext'
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons'
 
 const Navbar = () => {
