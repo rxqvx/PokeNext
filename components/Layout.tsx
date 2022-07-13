@@ -1,7 +1,6 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Head from "next/head";
-import { Text } from '@chakra-ui/react'
 
 const Layout = ({ children }) => {
   return (
@@ -11,13 +10,12 @@ const Layout = ({ children }) => {
         <title>PokeNext</title>
       </Head>
       <Navbar />
-      <Text
-        as="main"
-        minHeight="70vh"
+      <main
         className="main-container"
+        //botar um dimensions height
       >
         {children}
-      </Text>
+      </main>
       <Footer />
     </>
   );

@@ -1,16 +1,42 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .main-container {
-    min-height: 70vh;
+  min-height: 70vh;
 }
 
 @media (max-width: 600px) {
-    * .main-container {
-        width: 200vw;
-    }
+  * .main-container {
+    width: 200vw;
+    /* height: 165vh; */
+  }
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Fundo da barra de rolagem */
+::-webkit-scrollbar-track-piece {
+  background-color: #444;
+  border-left: solid 1px #777;
+}
+
+/* Cor do indicador de rolagem */
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #e33d33;
+  border-radius: 20px;
+  border: solid 1px #fff;
+}
+
+/* Cor do indicador de rolagem - ao passar o mouse */
+::-webkit-scrollbar-thumb:vertical:hover,
+::-webkit-scrollbar-thumb:horizontal:hover {
+  background-color: #610500;
 }

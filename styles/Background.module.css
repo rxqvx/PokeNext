@@ -1,0 +1,9 @@
+.container {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .container {
+    height: 118vh;
+  }
+}
