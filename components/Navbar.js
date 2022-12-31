@@ -41,7 +41,6 @@ const Navbar = () => {
             }}
           >
             {" "}
-            {/* styles.logo */}
             <Image
               src="/images/pokeball.png"
               alt="pokeball"
@@ -108,7 +107,6 @@ const Navbar = () => {
           </Link>
         </Flex>
       </Flex>
-
       <IconButton
         aria-label="Open Menu"
         size="lg"
@@ -177,7 +175,6 @@ const Navbar = () => {
         </Flex>
       ) : null}
       <List display={["none", "none", "flex", "flex"]}>
-        {/*{styles.link_items}*/}
         <ListItem onClick={Clear} marginRight="1.3em">
           <Text
             as="a"

@@ -29,33 +29,23 @@ export default function Home({ pokemons }) {
 
   const handleList = (busca) => {
     if (!busca || busca === "") {
-      console.log("busca false", busca);
       return (
         <>
-          {pokemons.map(
-            (
-              pokemon // como jsx considera como um objeto então tem que ser parentesis ao invés de chaves como normalmente
-            ) => (
-              <Card key={pokemon.id} pokemon={pokemon} />
-            )
-          )}
+          {pokemons.map((pokemon) => (
+            <Card key={pokemon.id} pokemon={pokemon} />
+          ))}
         </>
       );
     } else if (busca) {
       console.log("busca true", busca);
-      // { pokemons.map((pokemon) => console.log(pokemon.name)) }
       const pokemonsFiltered = pokemons.filter((pokemon) =>
         pokemon.name.startsWith(busca)
       );
       return (
         <>
-          {pokemonsFiltered.map(
-            (
-              pokemon // como jsx considera como um objeto então tem que ser parentesis ao invés de chaves como normalmente
-            ) => (
-              <Card key={pokemon.id} pokemon={pokemon} />
-            )
-          )}
+          {pokemonsFiltered.map((pokemon) => (
+            <Card key={pokemon.id} pokemon={pokemon} />
+          ))}
         </>
       );
     }
@@ -70,7 +60,6 @@ export default function Home({ pokemons }) {
           alignItems="center"
           marginBottom="2em"
         >
-          {/* title_container */}
           <Text
             as="h1"
             color="#e33d33"
@@ -109,7 +98,6 @@ export default function Home({ pokemons }) {
           margin="0 auto"
           gap={["initial", 4]}
         >
-          {/* pokemonContainer */}
           {handleList(busca)}
         </Flex>
         <Background />
