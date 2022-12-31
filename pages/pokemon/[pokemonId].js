@@ -11,7 +11,6 @@ export const getStaticPaths = async () => {
   const res = await fetch(`${api}/?limit=${maxPokemons}`);
   const data = await res.json();
 
-  //params
   const paths = data.results.map((pokemon, index) => {
     return {
       params: { pokemonId: (index + 1).toString() },
