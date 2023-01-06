@@ -5,7 +5,7 @@ const Footer: FC = () => {
 	return (
 		<footer className={styles.footer}>
 			<p>
-				<span>PokeNext</span> &copy; 2022
+				<span>Made PokeNext with ❤️ by Henrique Kenji</span> &copy; 2022
 			</p>
 		</footer>
 	);
