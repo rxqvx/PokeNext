@@ -27,7 +27,7 @@ export async function getStaticProps() {
 export default function Home({ pokemons }) {
 	const { busca } = useContext(SearchBarContext);
 
-	const handleList = (busca: string) => {
+	const handleList = (busca: any) => {
 		if (!busca || busca === "") {
 			return (
 				<>
