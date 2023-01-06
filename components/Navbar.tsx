@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
 
 	return (
 		<Flex
+			data-test="navbar"
 			justifyContent="space-around"
 			alignItems="center"
 			padding="1em 1.2em"
