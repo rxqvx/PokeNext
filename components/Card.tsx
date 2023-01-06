@@ -8,8 +8,6 @@ interface ICardProps {
 }
 
 const Card: FC<ICardProps> = ({ pokemon }: ICardProps) => {
-	console.log("pokemon", pokemon);
-
 	return (
 		<Flex
 			justifyContent="center"
