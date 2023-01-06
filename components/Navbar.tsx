@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
 			width={["200vw", "auto"]}
 		>
 			<Link href="/">
-				<a onClick={Clear}>
+				<a onClick={() => Clear()}>
 					<Flex
 						justifyContent="center"
 						align-items="center"

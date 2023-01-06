@@ -19,7 +19,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		"components/Navbar.tsx",
-		"contexts/SearchBarContext.js"
+		"contexts/SearchBarContext.tsx"
 	],
 	"exclude": ["node_modules"]
 }

@@ -7,7 +7,7 @@ interface ICardProps {
 	url: string;
 }
 
-const Card: FC<ICardProps> = ({ pokemon }: any) => {
+const Card: FC<any> = ({ pokemon }: any) => {
 	return (
 		<Flex
 			justifyContent="center"
